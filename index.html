@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFZ Traders | Premium Gold Trading Signals</title>
+    <meta name="description" content="MFZ Traders — Premium XAUUSD gold trading signals with 5+ years of experience and 200+ active members. Join the elite.">
+    <meta property="og:title" content="MFZ Traders | Premium Gold Trading Signals">
+    <meta property="og:description" content="Dominate the gold market with MFZ Traders. Premium XAUUSD signals, expert analysis, and a proven track record.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="hero-bg.jpg" as="image">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#00E5CC',
+                        'brand-dark': '#00C4AE',
+                        'brand-light': '#33EEDA',
+                        'brand-glow': 'rgba(0, 229, 204, 0.15)',
+                        'brand-glow-strong': 'rgba(0, 229, 204, 0.3)',
+                        gold: '#D4A843',
+                        'gold-light': '#E8C96A',
+                        surface: '#111111',
+                        'surface-elevated': '#1A1A1A',
+                        'surface-floating': '#222222',
+                        base: '#0A0A0A',
+                        muted: '#888888',
+                    },
+                    fontFamily: {
+                        display: ['Orbitron', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0A0A;
+            color: #E5E5E5;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* SVG noise texture */
+        .noise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Glow effects */
+        .glow-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00E5CC, transparent);
+            opacity: 0.4;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00E5CC 0%, #33EEDA 50%, #D4A843 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card hover glow */
+        .card-glow {
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .card-glow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 229, 204, 0.15), 0 2px 8px rgba(0, 229, 204, 0.1);
+        }
+
+        /* Pricing highlight */
+        .pricing-popular {
+            border: 1px solid rgba(0, 229, 204, 0.4);
+            box-shadow: 0 0 40px rgba(0, 229, 204, 0.1), 0 0 80px rgba(0, 229, 204, 0.05);
+        }
+
+        /* Button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #00E5CC, #00C4AE);
+            color: #0A0A0A;
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+            text-decoration: none;
+            font-size: 15px;
+            letter-spacing: 0.02em;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 229, 204, 0.3);
+        }
+        .btn-primary:active { transform: translateY(0); }
+        .btn-primary:focus-visible {
+            outline: 2px solid #00E5CC;
+            outline-offset: 3px;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(0, 229, 204, 0.4);
+            color: #00E5CC;
+            font-weight: 600;
+            padding: 14px 36px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            font-size: 15px;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: rgba(0, 229, 204, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 229, 204, 0.15);
+        }
+        .btn-outline:active { transform: translateY(0); }
+        .btn-outline:focus-visible {
+            outline: 2px solid #00E5CC;
+            outline-offset: 3px;
+        }
+
+        /* Section heading style */
+        .section-label {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #00E5CC;
+        }
+
+        /* Hero background */
+        .hero-bg {
+            background: url('hero-bg.jpg') center/cover no-repeat;
+        }
+
+        /* FAQ */
+        .faq-item summary {
+            cursor: pointer;
+            list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::before {
+            content: '+';
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            color: #00E5CC;
+            margin-right: 16px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .faq-item[open] summary::before {
+            transform: rotate(45deg);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00E5CC; }
+
+        /* Mobile nav */
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: #0A0A0A;
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            display: none;
+        }
+        #mobile-menu.active { display: flex !important; }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════════ NAVBAR ═══════════════════════════════════════════ -->
+    <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-base/80 border-b border-white/5" role="navigation" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3" aria-label="MFZ Traders home">
+                <img src="brand_assets/logo.png" alt="MFZ Traders Logo" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
+                <span class="font-display text-xl font-bold tracking-tight text-white">MFZ<span class="text-brand"> TRADERS</span></span>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">About</a>
+                <a href="#results" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Results</a>
+                <a href="#how-it-works" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">How It Works</a>
+                <a href="#pricing" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Pricing</a>
+                <a href="#faq" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">FAQ</a>
+                <a href="#pricing" class="btn-primary text-sm !py-3 !px-6" data-magnetic>Join Now</a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button class="md:hidden text-white p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" aria-label="Open menu" onclick="document.getElementById('mobile-menu').classList.add('active')">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- Mobile menu (outside nav to avoid backdrop-blur inheritance) -->
+    <div id="mobile-menu">
+        <button class="absolute top-6 right-6 text-white p-2" aria-label="Close menu" onclick="document.getElementById('mobile-menu').classList.remove('active')">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+        <a href="#about" class="text-2xl font-display text-white hover:text-brand" onclick="document.getElementById('mobile-menu').classList.remove('active')">About</a>
+        <a href="#results" class="text-2xl font-display text-white hover:text-brand" onclick="document.getElementById('mobile-menu').classList.remove('active')">Results</a>
+        <a href="#how-it-works" class="text-2xl font-display text-white hover:text-brand" onclick="document.getElementById('mobile-menu').classList.remove('active')">How It Works</a>
+        <a href="#pricing" class="text-2xl font-display text-white hover:text-brand" onclick="document.getElementById('mobile-menu').classList.remove('active')">Pricing</a>
+        <a href="#faq" class="text-2xl font-display text-white hover:text-brand" onclick="document.getElementById('mobile-menu').classList.remove('active')">FAQ</a>
+        <a href="#pricing" class="btn-primary mt-4" onclick="document.getElementById('mobile-menu').classList.remove('active')">Join Now</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════ HERO ═══════════════════════════════════════════ -->
+    <section class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden noise">
+        <!-- Background image -->
+        <div class="absolute inset-0 hero-bg" data-parallax="-80"></div>
+        <!-- Gradient overlays -->
+        <div class="absolute inset-0 bg-gradient-to-t from-base via-base/70 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-base/80 to-transparent"></div>
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 50%, rgba(0,229,204,0.08) 0%, transparent 60%);"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16">
+            <!-- Logo -->
+            <div data-appear data-appear-delay="0">
+                <img src="brand_assets/logo.png" alt="MFZ Traders" class="w-28 h-28 mx-auto mb-8 drop-shadow-2xl" onerror="this.style.display='none'">
+            </div>
+
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-[-0.03em] leading-[1.05] mb-6" data-split="words">
+                Dominate The <span class="text-gradient">Gold Market</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-appear data-appear-delay="0.4">
+                Premium XAUUSD trading signals backed by 5+ years of experience. Join 200+ members profiting from the gold market every day.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-appear data-appear-delay="0.6">
+                <a href="#pricing" class="btn-primary text-base" data-magnetic>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Get Started
+                </a>
+                <a href="#about" class="btn-outline text-base" data-magnetic>
+                    Learn More
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+                </a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="flex flex-wrap justify-center gap-8 mt-14 text-sm text-muted" data-appear data-appear-delay="0.8">
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="16" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    5+ Years Trading
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="16" fill="#00E5CC" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    200+ Members
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg width="16" height="16" fill="#00E5CC" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    24/7 Signals
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs">
+            <span>Scroll</span>
+            <div class="w-5 h-8 border border-muted/40 rounded-full flex justify-center pt-1.5">
+                <div class="w-1 h-2 bg-brand rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ ABOUT ═══════════════════════════════════════════ -->
+    <section id="about" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 70% 30%, rgba(0,229,204,0.05) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Image side -->
+                <div class="relative" data-reveal="fade-right">
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="about-bg.jpg" alt="MFZ Trading Setup" class="w-full h-auto rounded-2xl" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-base/60 to-transparent"></div>
+                        <div class="absolute inset-0 mix-blend-multiply" style="background: rgba(0,229,204,0.08);"></div>
+                    </div>
+                    <!-- Floating stat card -->
+                    <div class="absolute -bottom-6 -right-4 md:-right-8 bg-surface-elevated border border-white/10 rounded-xl p-5 shadow-2xl" data-reveal="zoom" data-reveal-delay="0.3">
+                        <div class="font-display text-3xl font-bold text-brand" data-counter="5" data-counter-suffix="+">0</div>
+                        <div class="text-sm text-muted mt-1">Years Experience</div>
+                    </div>
+                </div>
+
+                <!-- Text side -->
+                <div>
+                    <span class="section-label" data-reveal="fade-up">About MFZ</span>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-6" data-reveal="fade-up" data-reveal-delay="0.1">
+                        Built By Traders, <br><span class="text-gradient">For Traders</span>
+                    </h2>
+                    <p class="text-gray-400 mb-6" data-reveal="fade-up" data-reveal-delay="0.2">
+                        MFZ Traders was founded with one mission: to give everyday traders access to institutional-grade gold analysis. With over 5 years of experience specialising in XAUUSD, we've built a community of 200+ profitable traders who trust our signals daily.
+                    </p>
+                    <p class="text-gray-400 mb-8" data-reveal="fade-up" data-reveal-delay="0.3">
+                        Our approach combines Smart Money Concepts, multi-timeframe analysis, and disciplined risk management to deliver consistent, high-probability setups that you can execute with confidence.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6" data-reveal="fade-up" data-reveal-delay="0.4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-glow flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" fill="#00E5CC" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white text-sm">Gold Specialist</div>
+                                <div class="text-xs text-muted">XAUUSD focused</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-glow flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white text-sm">Risk Managed</div>
+                                <div class="text-xs text-muted">SL on every trade</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-glow flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" fill="#00E5CC" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white text-sm">Real-Time</div>
+                                <div class="text-xs text-muted">Instant alerts</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-brand-glow flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white text-sm">Proven Results</div>
+                                <div class="text-xs text-muted">Verified track record</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ STATS / RESULTS ═══════════════════════════════════════════ -->
+    <section id="results" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.04) 0%, transparent 60%);"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="section-label" data-reveal="fade-up">Track Record</span>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                Numbers Don't <span class="text-gradient">Lie</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-16" data-reveal="fade-up" data-reveal-delay="0.2">
+                Consistent results, transparent performance. Here's what MFZ Traders delivers month after month.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-stagger-parent>
+                <!-- Stat 1 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 card-glow" data-stagger-child data-tilt>
+                    <div class="font-display text-4xl md:text-5xl font-black text-brand mb-2" data-counter="5" data-counter-suffix="+">0</div>
+                    <div class="text-sm text-muted font-medium">Years Trading</div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 card-glow" data-stagger-child data-tilt>
+                    <div class="font-display text-4xl md:text-5xl font-black text-brand mb-2" data-counter="200" data-counter-suffix="+">0</div>
+                    <div class="text-sm text-muted font-medium">Active Members</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 card-glow" data-stagger-child data-tilt>
+                    <div class="font-display text-4xl md:text-5xl font-black text-gold mb-2" data-counter="2500" data-counter-suffix="+">0</div>
+                    <div class="text-sm text-muted font-medium">Pips Captured</div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 card-glow" data-stagger-child data-tilt>
+                    <div class="font-display text-4xl md:text-5xl font-black text-gold mb-2" data-counter="78" data-counter-suffix="%">0</div>
+                    <div class="text-sm text-muted font-medium">Win Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════════ -->
+    <section id="how-it-works" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 20% 80%, rgba(0,229,204,0.05) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="section-label" data-reveal="fade-up">How It Works</span>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                Three Steps To <span class="text-gradient">Profit</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-16" data-reveal="fade-up" data-reveal-delay="0.2">
+                Getting started with MFZ is simple. Follow these three steps and start receiving profitable gold signals today.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8" data-stagger-parent>
+                <!-- Step 1 -->
+                <div class="relative bg-surface-elevated border border-white/5 rounded-2xl p-8 text-center card-glow" data-stagger-child data-tilt>
+                    <div class="w-16 h-16 rounded-full bg-brand-glow border border-brand/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="font-display text-2xl font-bold text-brand">01</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Choose Your Plan</h3>
+                    <p class="text-gray-400 text-sm">Select monthly or lifetime access and join the MFZ Traders community via Telegram.</p>
+                </div>
+
+                <!-- Connector arrow (desktop) -->
+                <div class="hidden md:flex absolute left-[33%] top-1/2 -translate-y-1/2 items-center" style="display:none;">
+                    <svg width="40" height="40" fill="none" stroke="#00E5CC" stroke-width="1.5"><path d="M8 20h24M24 12l8 8-8 8"/></svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative bg-surface-elevated border border-white/5 rounded-2xl p-8 text-center card-glow" data-stagger-child data-tilt>
+                    <div class="w-16 h-16 rounded-full bg-brand-glow border border-brand/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="font-display text-2xl font-bold text-brand">02</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Receive Signals</h3>
+                    <p class="text-gray-400 text-sm">Get real-time XAUUSD signals with exact entry, stop loss, and take profit levels delivered straight to you.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative bg-surface-elevated border border-white/5 rounded-2xl p-8 text-center card-glow" data-stagger-child data-tilt>
+                    <div class="w-16 h-16 rounded-full bg-brand-glow border border-brand/30 flex items-center justify-center mx-auto mb-6">
+                        <span class="font-display text-2xl font-bold text-brand">03</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3">Execute & Profit</h3>
+                    <p class="text-gray-400 text-sm">Copy the signals to your broker, manage your risk, and watch your account grow consistently.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ SIGNAL FEATURES ═══════════════════════════════════════════ -->
+    <section id="features" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0">
+            <img src="features-bg.jpg" alt="" class="w-full h-full object-cover opacity-20" loading="lazy">
+            <div class="absolute inset-0 bg-base/90"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="section-label" data-reveal="fade-up">What You Get</span>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                    Everything You Need To <span class="text-gradient">Win</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto" data-reveal="fade-up" data-reveal-delay="0.2">
+                    Every signal comes loaded with the details you need to trade with confidence.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger-parent>
+                <!-- Feature 1 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Exact Entry Points</h3>
+                    <p class="text-gray-400 text-sm">Precise buy/sell entries so you know exactly when to get in.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Stop Loss Levels</h3>
+                    <p class="text-gray-400 text-sm">Every signal includes a tight stop loss to protect your capital.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Take Profit Targets</h3>
+                    <p class="text-gray-400 text-sm">Multiple TP levels so you can scale out and maximise gains.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Market Analysis</h3>
+                    <p class="text-gray-400 text-sm">Detailed breakdowns explaining why we're taking each trade.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Instant Alerts</h3>
+                    <p class="text-gray-400 text-sm">Real-time notifications so you never miss a setup.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-surface-elevated/80 backdrop-blur border border-white/5 rounded-2xl p-7 card-glow" data-stagger-child data-tilt>
+                    <div class="w-12 h-12 rounded-xl bg-brand-glow flex items-center justify-center mb-5">
+                        <svg width="24" height="24" fill="#00E5CC" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                    </div>
+                    <h3 class="font-display text-lg font-bold text-white mb-2">Community Access</h3>
+                    <p class="text-gray-400 text-sm">Join a private group of like-minded traders sharing insights and wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ PRICING ═══════════════════════════════════════════ -->
+    <section id="pricing" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 20%, rgba(0,229,204,0.06) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="section-label" data-reveal="fade-up">Pricing</span>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                Invest In Your <span class="text-gradient">Trading</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-16" data-reveal="fade-up" data-reveal-delay="0.2">
+                Choose the plan that fits your commitment level. Both plans include full access to all signals and the community.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto" data-stagger-parent>
+                <!-- Monthly -->
+                <div class="bg-surface-elevated border border-white/10 rounded-2xl p-8 md:p-10 card-glow text-left" data-stagger-child data-tilt>
+                    <div class="text-sm text-muted font-medium mb-2">Monthly</div>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="font-display text-5xl font-black text-white">£79</span>
+                        <span class="text-muted text-sm">/month</span>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            All XAUUSD signals
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Entry, SL & TP levels
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Market analysis
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Community access
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Cancel anytime
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn-outline w-full justify-center" data-magnetic>Get Monthly Access</a>
+                </div>
+
+                <!-- Lifetime -->
+                <div class="pricing-popular bg-surface-elevated rounded-2xl p-8 md:p-10 card-glow text-left relative" data-stagger-child data-tilt>
+                    <!-- Popular badge -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand text-base font-display text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase">Best Value</div>
+
+                    <div class="text-sm text-brand font-medium mb-2">Lifetime</div>
+                    <div class="flex items-baseline gap-1 mb-2">
+                        <span class="font-display text-5xl font-black text-white">£350</span>
+                        <span class="text-muted text-sm">one-time</span>
+                    </div>
+                    <p class="text-xs text-brand/70 mb-6">Pay once, access forever</p>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#00E5CC" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            <strong>Everything in Monthly</strong>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Lifetime access — no renewals
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Priority signal delivery
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            VIP community channel
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300">
+                            <svg width="18" height="18" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Save £598+ per year
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn-primary w-full justify-center" data-magnetic>Get Lifetime Access</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ TESTIMONIALS ═══════════════════════════════════════════ -->
+    <section id="testimonials" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 80% 50%, rgba(212,168,67,0.04) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+            <span class="section-label" data-reveal="fade-up">Testimonials</span>
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                What Our Members <span class="text-gradient">Say</span>
+            </h2>
+            <p class="text-gray-400 max-w-xl mx-auto mb-16" data-reveal="fade-up" data-reveal-delay="0.2">
+                Don't just take our word for it — hear from traders who are profiting with MFZ every day.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8" data-stagger-parent>
+                <!-- Testimonial 1 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 text-left card-glow" data-stagger-child data-tilt>
+                    <div class="flex gap-1 mb-4">
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 italic">"MFZ changed my trading completely. The signals are clean, the analysis is clear, and I've been consistently profitable since joining. Best investment I've made."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-glow flex items-center justify-center">
+                            <span class="font-display text-sm font-bold text-brand">JM</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">James M.</div>
+                            <div class="text-xs text-muted">Member since 2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 text-left card-glow" data-stagger-child data-tilt>
+                    <div class="flex gap-1 mb-4">
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 italic">"I was sceptical at first but the results speak for themselves. Got lifetime access and it paid for itself within the first month. The community is quality too."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-glow flex items-center justify-center">
+                            <span class="font-display text-sm font-bold text-brand">SA</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Sarah A.</div>
+                            <div class="text-xs text-muted">Lifetime Member</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-surface-elevated border border-white/5 rounded-2xl p-8 text-left card-glow" data-stagger-child data-tilt>
+                    <div class="flex gap-1 mb-4">
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg width="16" height="16" fill="#D4A843" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 italic">"Finally a signals group that actually delivers. No fluff, no hype — just solid gold setups day after day. My account is up 40% in 3 months."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-glow flex items-center justify-center">
+                            <span class="font-display text-sm font-bold text-brand">DK</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Daniel K.</div>
+                            <div class="text-xs text-muted">Member since 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ FAQ ═══════════════════════════════════════════ -->
+    <section id="faq" class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 30% 70%, rgba(0,229,204,0.04) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="section-label" data-reveal="fade-up">FAQ</span>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mt-4 mb-4" data-reveal="fade-up" data-reveal-delay="0.1">
+                    Got <span class="text-gradient">Questions?</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4" data-stagger-parent>
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">What markets do you cover?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">We specialise exclusively in XAUUSD (Gold vs US Dollar). By focusing on a single instrument, we've developed deep expertise and consistently high-probability setups that general signal providers simply can't match.</div>
+                </details>
+
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">How are signals delivered?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">All signals are delivered in real-time via our private Telegram channel. You'll receive a notification with the exact entry price, stop loss, and take profit levels along with a brief market analysis.</div>
+                </details>
+
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Do I need trading experience?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Our signals are designed to be easy to follow for traders of all levels. Each signal comes with clear instructions. However, we recommend having a basic understanding of how to place trades on your broker platform.</div>
+                </details>
+
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">What's the difference between Monthly and Lifetime?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Both plans give you full access to all signals, analysis, and the community. The Lifetime plan is a one-time payment of £350 — no recurring fees, ever. Monthly is £79/month and can be cancelled anytime. Lifetime members also get priority signal delivery and VIP channel access.</div>
+                </details>
+
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">How many signals per day?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">We focus on quality over quantity. Typically 1-3 high-probability setups per day during active market sessions. We'd rather send fewer winning trades than flood your feed with mediocre setups.</div>
+                </details>
+
+                <details class="faq-item bg-surface-elevated border border-white/5 rounded-xl overflow-hidden" data-stagger-child>
+                    <summary class="p-6 font-semibold text-white flex items-center hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Can I get a refund?</summary>
+                    <div class="px-6 pb-6 text-gray-400 text-sm leading-relaxed">Due to the nature of digital signal services, we do not offer refunds. However, we're confident in the value we provide — our results and member testimonials speak for themselves. Start with Monthly if you'd like to test the waters first.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Glow separator -->
+    <div class="glow-line"></div>
+
+
+    <!-- ═══════════════════════════════════════════ CTA ═══════════════════════════════════════════ -->
+    <section class="relative py-24 md:py-32 overflow-hidden noise">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 50%, rgba(0,229,204,0.1) 0%, transparent 50%);"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+            <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-[-0.03em] mb-6" data-split="words">
+                Ready To Start <span class="text-gradient">Winning?</span>
+            </h2>
+            <p class="text-gray-400 max-w-lg mx-auto mb-10" data-reveal="fade-up" data-reveal-delay="0.2">
+                Join 200+ traders already profiting from our gold signals. Your next winning trade is one click away.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-reveal="fade-up" data-reveal-delay="0.3">
+                <a href="#pricing" class="btn-primary text-base" data-magnetic>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    Join MFZ Traders
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════ FOOTER ═══════════════════════════════════════════ -->
+    <footer class="relative border-t border-white/5 py-16 noise">
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="brand_assets/logo.png" alt="MFZ Traders" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
+                        <span class="font-display text-xl font-bold text-white">MFZ<span class="text-brand"> TRADERS</span></span>
+                    </div>
+                    <p class="text-sm text-muted leading-relaxed">Premium gold trading signals backed by 5+ years of experience. Dominate the XAUUSD market.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display text-sm font-bold text-white mb-4 tracking-wider uppercase">Quick Links</h4>
+                    <nav class="flex flex-col gap-3" aria-label="Footer navigation">
+                        <a href="#about" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">About</a>
+                        <a href="#results" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Results</a>
+                        <a href="#pricing" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">Pricing</a>
+                        <a href="#faq" class="text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand">FAQ</a>
+                    </nav>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-display text-sm font-bold text-white mb-4 tracking-wider uppercase">Connect</h4>
+                    <div class="flex flex-col gap-3">
+                        <!-- Telegram button -->
+                        <a href="#" class="inline-flex items-center gap-3 text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" aria-label="Join on Telegram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                            Join Telegram
+                        </a>
+                        <!-- Instagram button -->
+                        <a href="#" class="inline-flex items-center gap-3 text-sm text-muted hover:text-brand transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand" aria-label="Follow on Instagram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                            Follow on Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glow-line mb-8"></div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-muted">&copy; 2025 MFZ Traders. All rights reserved.</p>
+                <p class="text-xs text-muted/60">Trading involves risk. Past performance does not guarantee future results. Trade responsibly.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ═══════════════════════════════════════════ SCRIPTS ═══════════════════════════════════════════ -->
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- AireyAI Animation Toolkit -->
+    <script src="animations.js"></script>
+
+    <!-- Smooth scroll for nav links -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
